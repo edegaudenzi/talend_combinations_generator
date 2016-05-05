@@ -6,11 +6,11 @@ This combination generator just generates a zip with a .txt inside containing al
 
 
 **How to:**
-This tool, is Java based, platform indipendent and into `BUILD` folder you can find a .SH and a .BAT: suitable for launching it with linux/osx, Windows. You only have to download the `BUILD` folder and compile the properties file as follow:
+This tool, is Java based, platform indipendent and into `BUILD/generate_combinations/` folder you can find a .SH and a .BAT: suitable for launching it with linux/osx, Windows. You only have to download the `BUILD` folder and edit the properties file as follow:
 
-_properties file_ `BUILD/generate_combinations/local_project/generate_combinations_0_1/contexts/Default.properties`
+_Properties file:_ `BUILD/generate_combinations/local_project/generate_combinations_0_1/contexts/Default.properties`
 
-_Containing the properties:_ 
+_Properties:_ 
 
 `charset=abc`: these are the chars used to build combinations. 
 
@@ -31,7 +31,7 @@ Actually, it also implements a basic filter to discard all the combinations that
 
 
 **Importing in Talend:**
-You can import this project into Talend, anyway you have to define a ImplicitContext file to valorize parameters from an external source. You can find a sample into the file `BUILD/generate_combinations/local_project/generate_combinations_0_1/contexts/Default.properties` above cited.
+You can import this project into Talend, anyway you have to define a ImplicitContext file to valorize parameters from an external source. You can find a sample into the above cited file: `BUILD/generate_combinations/local_project/generate_combinations_0_1/contexts/Default.properties`
 
 **License:**
 Please folks, <a href="http://www.wtfpl.net/"><img
