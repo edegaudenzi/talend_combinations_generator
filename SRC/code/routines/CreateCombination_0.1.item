@@ -12,9 +12,9 @@ public class CreateCombination {
 	
 	public static String getCombination(long iParent) {
 		StringBuilder sb = new StringBuilder();
-		for(int i=1; i<=combinationLength; i++){
+		for(int i=0; i<combinationLength; i++){
 			if (iParent==0){ /*Optimization if: it allows to avoid useless cycles*/
-				for (int n=0; n <= (combinationLength-i); n++){
+				for (int n=0; n < (combinationLength-i); n++){
 					sb.append(charset[0]);
 				}
 				break;
@@ -51,8 +51,28 @@ public class CreateCombination {
 	}
 
 	/*Filters definitions*/
-	private static Pattern quadCharPattern = Pattern.compile("(\\w)\\1{3,}");
+	
+//	Regex are more readable, but they are extremely slow. Below the equivalent: gain is 400k rows/sec more.	
+//	private static Pattern quadCharPattern = Pattern.compile("(\\w)\\1{3,}");
+//	public static boolean isThereAQuadrupleChar(String str){
+//		return quadCharPattern.matcher(str).find();
+//	}
+	
+	private static char[] eqChars=new char[4];
 	public static boolean isThereAQuadrupleChar(String str){
-		return quadCharPattern.matcher(str).find();
+		char[] cs = str.toCharArray();
+		eqChars[0]=cs[2];
+		eqChars[1]=cs[1];
+		eqChars[2]=cs[0];
+		eqChars[3]=cs[0];		
+		for (int i=3; i<cs.length; i++){
+			eqChars[3]=eqChars[2];
+			eqChars[2]=eqChars[1];
+			eqChars[1]=eqChars[0];
+			eqChars[0]=cs[i];
+			if (eqChars[0] == eqChars[1] && eqChars[1]==eqChars[2] && eqChars[2]==eqChars[3]){return true;}
+		}
+		return false;
 	}
+
 }
