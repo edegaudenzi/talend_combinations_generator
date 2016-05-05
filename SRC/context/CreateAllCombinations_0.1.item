@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" confirmationNeeded="false" name="Default">
+  <contextParameter comment="" name="output_path" prompt="output_path?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter comment="" name="charset" prompt="charset?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter comment="" name="combination_length" prompt="combination_length?" promptNeeded="false" type="id_Integer" value=""/>
+</talendfile:ContextType>
